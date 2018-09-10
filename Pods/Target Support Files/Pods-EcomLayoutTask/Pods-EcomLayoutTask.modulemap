@@ -1,0 +1,6 @@
+framework module Pods_EcomLayoutTask {
+  umbrella header "Pods-EcomLayoutTask-umbrella.h"
+
+  export *
+  module * { export * }
+}
