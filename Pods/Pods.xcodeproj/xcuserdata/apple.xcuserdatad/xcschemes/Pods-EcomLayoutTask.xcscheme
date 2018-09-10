@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F5A43C0CC7F2095E6094691997C2FC6E"
+               BlueprintIdentifier = "58952DD9B2FBF6F45C9BD3005DA63CFA"
                BuildableName = "Pods_EcomLayoutTask.framework"
                BlueprintName = "Pods-EcomLayoutTask"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F5A43C0CC7F2095E6094691997C2FC6E"
+            BlueprintIdentifier = "58952DD9B2FBF6F45C9BD3005DA63CFA"
             BuildableName = "Pods_EcomLayoutTask.framework"
             BlueprintName = "Pods-EcomLayoutTask"
             ReferencedContainer = "container:Pods.xcodeproj">

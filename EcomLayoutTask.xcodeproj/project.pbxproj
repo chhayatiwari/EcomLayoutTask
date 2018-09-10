@@ -8,10 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		1869C0C8214685AA0054C9D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869C0C7214685AA0054C9D0 /* AppDelegate.swift */; };
-		1869C0CA214685AA0054C9D0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869C0C9214685AA0054C9D0 /* ViewController.swift */; };
+		1869C0CA214685AA0054C9D0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869C0C9214685AA0054C9D0 /* HomeViewController.swift */; };
 		1869C0CD214685AA0054C9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1869C0CB214685AA0054C9D0 /* Main.storyboard */; };
 		1869C0CF214685AF0054C9D0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1869C0CE214685AF0054C9D0 /* Assets.xcassets */; };
 		1869C0D2214685AF0054C9D0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1869C0D0214685AF0054C9D0 /* LaunchScreen.storyboard */; };
+		1869C0DE214694F60054C9D0 /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869C0DD214694F60054C9D0 /* APIRouter.swift */; };
+		1869C0EF2146F3EF0054C9D0 /* GCDBlackBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1869C0EE2146F3EF0054C9D0 /* GCDBlackBox.swift */; };
 		5A56599BB8F10823EC076EBE /* Pods_EcomLayoutTask.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 171031DE1087604BCA3CE41B /* Pods_EcomLayoutTask.framework */; };
 /* End PBXBuildFile section */
 
@@ -19,11 +21,13 @@
 		171031DE1087604BCA3CE41B /* Pods_EcomLayoutTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcomLayoutTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1869C0C4214685AA0054C9D0 /* EcomLayoutTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcomLayoutTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1869C0C7214685AA0054C9D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1869C0C9214685AA0054C9D0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1869C0C9214685AA0054C9D0 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1869C0CC214685AA0054C9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1869C0CE214685AF0054C9D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1869C0D1214685AF0054C9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1869C0D3214685AF0054C9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1869C0DD214694F60054C9D0 /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		1869C0EE2146F3EF0054C9D0 /* GCDBlackBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GCDBlackBox.swift; sourceTree = "<group>"; };
 		867919AED118759705CC3259 /* Pods-EcomLayoutTask.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcomLayoutTask.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EcomLayoutTask/Pods-EcomLayoutTask.debug.xcconfig"; sourceTree = "<group>"; };
 		DE7A945F38DBE92439DB9A5F /* Pods-EcomLayoutTask.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EcomLayoutTask.release.xcconfig"; path = "Pods/Target Support Files/Pods-EcomLayoutTask/Pods-EcomLayoutTask.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,14 +65,40 @@
 		1869C0C6214685AA0054C9D0 /* EcomLayoutTask */ = {
 			isa = PBXGroup;
 			children = (
+				1869C0ED2146F05E0054C9D0 /* Models */,
 				1869C0C7214685AA0054C9D0 /* AppDelegate.swift */,
-				1869C0C9214685AA0054C9D0 /* ViewController.swift */,
+				1869C0DC214694DC0054C9D0 /* Networking */,
+				1869C0D9214693870054C9D0 /* ViewControllers */,
 				1869C0CB214685AA0054C9D0 /* Main.storyboard */,
 				1869C0CE214685AF0054C9D0 /* Assets.xcassets */,
 				1869C0D0214685AF0054C9D0 /* LaunchScreen.storyboard */,
 				1869C0D3214685AF0054C9D0 /* Info.plist */,
 			);
 			path = EcomLayoutTask;
+			sourceTree = "<group>";
+		};
+		1869C0D9214693870054C9D0 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1869C0C9214685AA0054C9D0 /* HomeViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		1869C0DC214694DC0054C9D0 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1869C0DD214694F60054C9D0 /* APIRouter.swift */,
+				1869C0EE2146F3EF0054C9D0 /* GCDBlackBox.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		1869C0ED2146F05E0054C9D0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		7EBE7E6E48B6C6D773949154 /* Frameworks */ = {
@@ -183,10 +213,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-EcomLayoutTask/Pods-EcomLayoutTask-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -200,7 +234,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1869C0CA214685AA0054C9D0 /* ViewController.swift in Sources */,
+				1869C0EF2146F3EF0054C9D0 /* GCDBlackBox.swift in Sources */,
+				1869C0CA214685AA0054C9D0 /* HomeViewController.swift in Sources */,
+				1869C0DE214694F60054C9D0 /* APIRouter.swift in Sources */,
 				1869C0C8214685AA0054C9D0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +386,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T3NX6NLA5;
 				INFOPLIST_FILE = EcomLayoutTask/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ChhayaTiwari.EcomLayoutTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -368,7 +407,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T3NX6NLA5;
 				INFOPLIST_FILE = EcomLayoutTask/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = ChhayaTiwari.EcomLayoutTask;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
