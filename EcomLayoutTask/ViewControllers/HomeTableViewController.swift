@@ -1,5 +1,5 @@
 //
-//  HomeViewController.swift
+//  HomeTableViewController.swift
 //  EcomLayoutTask
 //
 //  Created by Chhaya Tiwari on 9/10/18.
@@ -9,10 +9,12 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
-class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDataSource {
+var photoUrl:[URL] = [URL]()
+class HomeTableViewController: UITableViewController {
     
-    var photoUrl:[URL] = [URL]()
+    //var photoUrl:[URL] = [URL]()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -36,7 +38,7 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
                         for photo in banner {
                             if let photoStr = photo["banner_image"] as? String {
                                 if let imageURL = URL(string: photoStr) {
-                                    self.photoUrl.append(imageURL)
+                                    photoUrl.append(imageURL)
                                 }
                                 else {
                                   //  self.showAlert("Image does not exist")
@@ -59,13 +61,48 @@ class HomeViewController: UIViewController , UITableViewDelegate, UITableViewDat
         }
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        photoUrl.count
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1") as! TableViewCell1
+       
+       // let index = (indexPath as NSIndexPath).row
+        return cell
     }
 
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        guard let tableViewCell = cell as? TableViewCell1 else
+        { return
+        }
+        tableViewCell.setCollectionViewDataSourceDelegate(dataSourceDelegate: self, forRow: indexPath.row)
+    }
+    
 }
 
+//MARK: CollectionView Protocols
+
+extension HomeTableViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell1
+        let index = (indexPath as NSIndexPath).row
+        //cell.image1.sd_setImage(with:photoUrl[index], placeholderImage: UIImage())
+        //cell.image = photoUrl[indexPath.item]
+       // cell.sd_imageURL() = photoUrl[indexPath.item]
+        cell.imageView.sd_setImage(with:photoUrl[index], placeholderImage: UIImage())
+       
+        return cell
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
+        
+        return photoUrl.count
+    }
+    
+    
+}
