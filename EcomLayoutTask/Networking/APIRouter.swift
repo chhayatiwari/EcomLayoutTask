@@ -9,12 +9,13 @@
 import Foundation
 import Alamofire
 
-enum APIRouter:URLRequestConvertible{
+enum APIRouter:URLRequestConvertible {
+    
     case firstApi(params:Parameters)
     case secondApi(params:Parameters)
     
-    var method:HTTPMethod{
-        switch self{
+    var method:HTTPMethod {
+        switch self {
         case .firstApi:
             return .get
         case .secondApi:

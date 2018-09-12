@@ -12,13 +12,13 @@ struct Offer {
     // MARK: Properties
     
     let id: String
-    let products: [String:AnyObject]
+    let products: [[String:AnyObject]]
     
     // MARK: Initializers
     
     init(dictionary: [String:AnyObject]) {
         id = (dictionary["id"] as! String)
-        products = (dictionary["products"] as! [String:AnyObject])
+        products = dictionary["products"] as! [[String:AnyObject]]
     }
     
     static func dataForOffer(_ results: [[String:AnyObject]]) -> [Offer] {
