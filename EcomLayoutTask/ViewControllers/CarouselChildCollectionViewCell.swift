@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewCell1: UICollectionViewCell {
+class CarouselChildCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: UIImageView!
     
