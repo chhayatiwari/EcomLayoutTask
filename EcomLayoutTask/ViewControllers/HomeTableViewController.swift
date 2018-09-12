@@ -12,6 +12,9 @@ import SwiftyJSON
 import SDWebImage
 
 var photoUrl:[URL] = [URL]()
+var dealItem:[Deal] = [Deal]()
+var offerItem:[Offer] = [Offer]()
+
 class HomeTableViewController: UITableViewController {
     
     //var photoUrl:[URL] = [URL]()
@@ -53,9 +56,11 @@ class HomeTableViewController: UITableViewController {
                     guard let deal = result["DOD"] as? [[String:AnyObject]] else {
                         return
                     }
+                    dealItem = Deal.dataForDeal(deal)
                     guard let offer = result["offer"] as? [[String:AnyObject]] else {
                         return
                     }
+                    offerItem = Offer.dataForOffer(offer)
                 }
             }
         }
@@ -67,7 +72,6 @@ class HomeTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell1") as! TableViewCell1
-       
        // let index = (indexPath as NSIndexPath).row
         return cell
     }

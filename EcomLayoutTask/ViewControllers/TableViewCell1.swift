@@ -12,7 +12,7 @@ class TableViewCell1: UITableViewCell {
 
     
    
-    @IBOutlet private weak var collectionView1: UICollectionView!
+    @IBOutlet weak var collectionView1: UICollectionView!
     
     //var image1 = UIImageView()
     override func awakeFromNib() {
