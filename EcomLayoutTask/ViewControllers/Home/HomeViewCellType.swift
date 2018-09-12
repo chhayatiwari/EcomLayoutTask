@@ -2,7 +2,7 @@
 //  HomeViewCellType.swift
 //  EcomLayoutTask
 //
-//  Created by Abhishek Singh on 12/09/18.
+//  Created by Chhaya Tiwari on 12/09/18.
 //  Copyright © 2018 chhayatiwari. All rights reserved.
 //
 
@@ -11,11 +11,11 @@ enum HomeRowType:String{
     case carousel = "carousel"
     case products = "products"
     case deals = "deals"
-    case dealDetails = "deals_details"
+  //  case dealDetails = "deals_details"
  
     static func allType() -> [HomeRowType]
     {
-        let allItems:[HomeRowType] = [.carousel,.products,.deals,.dealDetails]
+        let allItems:[HomeRowType] = [.carousel,.products,.deals]//,.dealDetails]
         
         return allItems
     }

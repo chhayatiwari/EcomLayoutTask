@@ -2,7 +2,7 @@
 //  CarouselParentCollectionViewCell.swift
 //  EcomLayoutTask
 //
-//  Created by Abhishek Singh on 12/09/18.
+//  Created by Chhaya Tiwari on 12/09/18.
 //  Copyright © 2018 chhayatiwari. All rights reserved.
 //
 
