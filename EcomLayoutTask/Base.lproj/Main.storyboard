@@ -165,7 +165,7 @@
                                             <outlet property="collectionView" destination="F88-Eb-KH4" id="xHQ-pd-X2w"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DealchildCollectionViewCell" id="rsK-oB-Wva" customClass="DealChildCollectionViewCell" customModule="EcomLayoutTask" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="DealChildCollectionViewCell" id="rsK-oB-Wva" customClass="DealChildCollectionViewCell" customModule="EcomLayoutTask" customModuleProvider="target">
                                         <rect key="frame" x="106.5" y="351" width="162" height="201"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -210,9 +210,9 @@
                                         </constraints>
                                         <size key="customSize" width="162" height="201"/>
                                         <connections>
-                                            <outlet property="imageView" destination="IAw-Uy-gTJ" id="53D-Za-S0L"/>
-                                            <outlet property="price" destination="CGN-lF-BvU" id="ffc-zk-WSX"/>
-                                            <outlet property="productName" destination="Fb8-wF-dQf" id="kwv-lO-WLX"/>
+                                            <outlet property="imageView" destination="IAw-Uy-gTJ" id="o6N-2G-GlH"/>
+                                            <outlet property="price" destination="CGN-lF-BvU" id="4tj-VG-5PY"/>
+                                            <outlet property="productName" destination="Fb8-wF-dQf" id="V4I-fH-YGC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

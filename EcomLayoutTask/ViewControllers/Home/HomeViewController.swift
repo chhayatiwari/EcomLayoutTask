@@ -15,6 +15,7 @@ import SDWebImage
 
 class HomeViewController: UIViewController {
     
+    
     @IBOutlet weak var collectionView: UICollectionView!
     var photoUrl:[URL] = [URL]()
     var dealItem:[Deal] = [Deal]()
@@ -23,7 +24,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.register(DealChildCollectionViewCell.self, forCellWithReuseIdentifier: "DealChildCollectionViewCell")
+        //collectionView.register(DealChildCollectionViewCell.self, forCellWithReuseIdentifier: "DealChildCollectionViewCell")
         callAPI()
     }
 
@@ -95,20 +96,22 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
         }
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
-                if dealItem.count > 0 {
-                    let deal = self.dealItem[indexPath.row-2]
-                    if let imageURL = URL(string: (deal.image)) {
-                        cell.imageView.sd_setImage(with:imageURL, placeholderImage: UIImage())
+              //  if dealItem.count > 0 {
+                    let deal = self.dealItem[((indexPath as NSIndexPath).row)-2]
+                        cell.productName.text = deal.name
+                        cell.price.text = "₹ \(deal.price)"
+                        if let imageURL = URL(string: (deal.image)) {
+                        cell.imageView.sd_setImage(with: imageURL, placeholderImage: UIImage())
                     }
-                    cell.productName.text = deal.name
-                    cell.price.text = "₹ \(deal.price)"
-                }
+            
+            
+               // }
                 return cell
             }
         }
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-        return rowType.count + dealItem.count - 1
+        return rowType.count + dealItem.count 
     }
 
     
