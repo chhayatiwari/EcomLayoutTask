@@ -10,7 +10,6 @@ import UIKit
 
 class CarouselParentCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var collectionView: UICollectionView!
-
     
     var datasource : [URL]!{
         didSet{
@@ -51,7 +50,5 @@ extension CarouselParentCollectionViewCell : UICollectionViewDelegate, UICollect
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
-        
     }
 }

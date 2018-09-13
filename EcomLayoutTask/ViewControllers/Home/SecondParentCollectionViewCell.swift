@@ -9,16 +9,29 @@
 import UIKit
 
 class SecondParentCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
+
+    @IBOutlet weak var collectionView: UICollectionView!
     
+    var datasource : [URL]!{
+        didSet{
+            if datasource.count > 0{
+                self.collectionView.reloadData()
+            }
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return datasource.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondChildCollectionViewCell", for: indexPath) as! SecondChildCollectionViewCell
-        let index = (indexPath as NSIndexPath).row
-        //cell.imageView.sd_setImage(with:datasource[index], placeholderImage: UIImage())
+        if indexPath.row < datasource.count{
+            cell.imageView.sd_setImage(with:datasource[indexPath.row], placeholderImage: UIImage())
+        }else{
+            cell.imageView.image = UIImage()
+        }
+        
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

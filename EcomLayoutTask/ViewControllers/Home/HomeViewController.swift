@@ -81,52 +81,53 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        switch rowType[indexPath.row] {
-        case .carousel :
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselParentCollectionViewCell", for: indexPath) as! CarouselParentCollectionViewCell
-            cell.datasource = photoUrl
-            return cell
-        case .products:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondParentCollectionViewCell", for: indexPath) as! SecondParentCollectionViewCell
-            
-            //cell.datasource = photoUrl
-            return cell
-            
-        case .deals:
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
-            if dealItem.count > 0 {
-                 let deal = self.dealItem[(indexPath.row)-2]
-                if let imageURL = URL(string: (deal.image)) {
-                    cell.imageView.sd_setImage(with:imageURL, placeholderImage: UIImage())
-                }
-                cell.productName.text = deal.name
-                cell.price.text = "₹ \(deal.price)"
+        if indexPath.row < 2{
+            switch rowType[indexPath.row] {
+            case .carousel :
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselParentCollectionViewCell", for: indexPath) as! CarouselParentCollectionViewCell
+                cell.datasource = photoUrl
+                return cell
+            case .products:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondParentCollectionViewCell", for: indexPath) as! SecondParentCollectionViewCell
+                cell.datasource = photoUrl
+                return cell
             }
-            
-            return cell
         }
-    }
+            else{
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
+                if dealItem.count > 0 {
+                    let deal = self.dealItem[indexPath.row-2]
+                    if let imageURL = URL(string: (deal.image)) {
+                        cell.imageView.sd_setImage(with:imageURL, placeholderImage: UIImage())
+                    }
+                    cell.productName.text = deal.name
+                    cell.price.text = "₹ \(deal.price)"
+                }
+                return cell
+            }
+        }
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-        return rowType.count
+        return rowType.count + dealItem.count - 1
     }
 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
-        switch rowType[indexPath.row]{
-        case .carousel :
-            return CGSize(width: screenSize.width, height: 200)
-        case .products:
-            return CGSize(width: screenSize.width, height: 100)
-        case .deals:
+        if indexPath.row < 2
+        {
+            switch rowType[indexPath.row]{
+            case .carousel :
+                return CGSize(width: screenSize.width, height: 200)
+            case .products:
+                return CGSize(width: screenSize.width, height: 80)
+            }
+        }
+        else{
             let screenWidth = screenSize.width
             let cellGridSize: CGFloat = (screenWidth / 2.0) - 5
             // let cellHeight: CGFloat = (cellGridSize*3)/2
             return CGSize(width: cellGridSize, height: cellGridSize)
-           // return CGSize(width: screenSize.width, height: 300)
-       
         }
     }
     
