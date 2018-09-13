@@ -105,42 +105,64 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SecondParentCollectionViewCell" id="Ix2-oi-a3Y" customClass="SecondParentCollectionViewCell" customModule="EcomLayoutTask" customModuleProvider="target">
-                                        <rect key="frame" x="2.5" y="211" width="370" height="130"/>
+                                        <rect key="frame" x="2.5" y="211" width="370" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="370" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="370" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="F88-Eb-KH4">
-                                                    <rect key="frame" x="2" y="2" width="366" height="126"/>
+                                                    <rect key="frame" x="2" y="2" width="366" height="76"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1ga-JO-UQj">
-                                                        <size key="itemSize" width="106" height="121"/>
+                                                        <size key="itemSize" width="83" height="82"/>
                                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SecondChildCollectionViewCell" id="t0E-Ux-MWu" customClass="SecondChildCollectionViewCell" customModule="EcomLayoutTask" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="2.5" width="106" height="121"/>
+                                                            <rect key="frame" x="0.0" y="-3" width="83" height="82"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                                <rect key="frame" x="0.0" y="0.0" width="106" height="121"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="83" height="82"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
-                                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dya-wL-p59">
-                                                                        <rect key="frame" x="8" y="8" width="90" height="105"/>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dya-wL-p59">
+                                                                        <rect key="frame" x="11.5" y="0.0" width="60" height="60"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="60" id="Fz9-3b-3qB"/>
+                                                                            <constraint firstAttribute="width" constant="60" id="Vl4-fj-tGD"/>
+                                                                        </constraints>
+                                                                        <userDefinedRuntimeAttributes>
+                                                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                                <integer key="value" value="30"/>
+                                                                            </userDefinedRuntimeAttribute>
+                                                                        </userDefinedRuntimeAttributes>
                                                                     </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgL-HU-UXc">
+                                                                        <rect key="frame" x="8" y="60" width="67" height="20"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="height" constant="20" id="1bO-bb-Ky4"/>
+                                                                        </constraints>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
-                                                                <constraint firstAttribute="bottom" secondItem="dya-wL-p59" secondAttribute="bottom" constant="8" id="8JI-bA-YOD"/>
-                                                                <constraint firstAttribute="trailing" secondItem="dya-wL-p59" secondAttribute="trailing" constant="8" id="UWY-g1-0bu"/>
-                                                                <constraint firstItem="dya-wL-p59" firstAttribute="top" secondItem="t0E-Ux-MWu" secondAttribute="top" constant="8" id="g7m-VB-mYn"/>
-                                                                <constraint firstItem="dya-wL-p59" firstAttribute="leading" secondItem="t0E-Ux-MWu" secondAttribute="leading" constant="8" id="hip-pM-JZb"/>
+                                                                <constraint firstAttribute="trailingMargin" secondItem="tgL-HU-UXc" secondAttribute="trailing" id="Efd-O3-3zm"/>
+                                                                <constraint firstItem="tgL-HU-UXc" firstAttribute="top" secondItem="dya-wL-p59" secondAttribute="bottom" id="IKt-3p-6c6"/>
+                                                                <constraint firstItem="dya-wL-p59" firstAttribute="top" secondItem="t0E-Ux-MWu" secondAttribute="top" id="ZMI-pd-VOc"/>
+                                                                <constraint firstItem="dya-wL-p59" firstAttribute="centerX" secondItem="t0E-Ux-MWu" secondAttribute="centerX" id="dAB-SV-SPJ"/>
+                                                                <constraint firstItem="tgL-HU-UXc" firstAttribute="leading" secondItem="t0E-Ux-MWu" secondAttribute="leadingMargin" id="ezT-yC-8ri"/>
+                                                                <constraint firstAttribute="bottomMargin" secondItem="tgL-HU-UXc" secondAttribute="bottom" id="ulc-82-imJ"/>
                                                             </constraints>
+                                                            <size key="customSize" width="83" height="82"/>
                                                             <connections>
                                                                 <outlet property="imageView" destination="dya-wL-p59" id="9jq-MW-ycy"/>
+                                                                <outlet property="name" destination="tgL-HU-UXc" id="ROM-FV-M0x"/>
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
@@ -160,13 +182,13 @@
                                             <constraint firstItem="F88-Eb-KH4" firstAttribute="top" secondItem="Ix2-oi-a3Y" secondAttribute="top" constant="2" id="xlG-wj-Jji"/>
                                             <constraint firstItem="F88-Eb-KH4" firstAttribute="leading" secondItem="Ix2-oi-a3Y" secondAttribute="leading" constant="2" id="ypN-0n-8iB"/>
                                         </constraints>
-                                        <size key="customSize" width="370" height="130"/>
+                                        <size key="customSize" width="370" height="80"/>
                                         <connections>
                                             <outlet property="collectionView" destination="F88-Eb-KH4" id="xHQ-pd-X2w"/>
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="ViewCollectionViewCell" id="rsK-oB-Wva">
-                                        <rect key="frame" x="4" y="351" width="367" height="50"/>
+                                        <rect key="frame" x="4" y="301" width="367" height="50"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="367" height="50"/>
@@ -201,7 +223,7 @@
                                         <size key="customSize" width="367" height="50"/>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" reuseIdentifier="DealChildCollectionViewCell" id="OUn-8K-lBm" customClass="DealChildCollectionViewCell" customModule="EcomLayoutTask" customModuleProvider="target">
-                                        <rect key="frame" x="117.5" y="411" width="140" height="140"/>
+                                        <rect key="frame" x="117.5" y="361" width="140" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>

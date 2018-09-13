@@ -23,12 +23,13 @@ class HomeViewController: UIViewController {
     var rowType = HomeRowType.allType()
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
-        //collectionView.register(DealChildCollectionViewCell.self, forCellWithReuseIdentifier: "DealChildCollectionViewCell")
         callAPI()
     }
 
-    func callAPI() {
+    func callAPI()
+    {
         let Parameters = ["":""]
         Alamofire.request(APIRouter.firstApi(params: Parameters )).responseJSON { (responseData) -> Void in
             if let response = (responseData.result.value)  {
@@ -82,7 +83,7 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        if indexPath.row < 2{
+        if indexPath.row < 3{
             switch rowType[indexPath.row] {
             case .carousel :
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselParentCollectionViewCell", for: indexPath) as! CarouselParentCollectionViewCell
@@ -92,12 +93,12 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondParentCollectionViewCell", for: indexPath) as! SecondParentCollectionViewCell
                 cell.datasource = photoUrl
                 return cell
+            case .deal:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewCollectionViewCell", for: indexPath)
+                return cell
             }
         }
-        else if indexPath.row == 2 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewCollectionViewCell", for: indexPath) 
-            return cell
-        }
+       
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
                     let deal = self.dealItem[((indexPath as NSIndexPath).row)-3]
@@ -112,25 +113,24 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
         }
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-        return rowType.count + dealItem.count + 1
+        return rowType.count + dealItem.count
     }
 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
-        if indexPath.row < 2
+        if indexPath.row <= 2
         {
             switch rowType[indexPath.row]{
             case .carousel :
                 return CGSize(width: screenSize.width, height: 200)
             case .products:
                 return CGSize(width: screenSize.width, height: 80)
+            case .deal:
+                return CGSize(width: screenSize.width, height: 50)
             }
         }
-        else if indexPath.row == 2 {
-            
-            return CGSize(width: screenSize.width, height: 50)
-        }
+        
         else{
             let screenWidth = screenSize.width
             let cellGridSize: CGFloat = (screenWidth / 2.0) - 5

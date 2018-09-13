@@ -7,14 +7,14 @@
 //
 
 import Foundation
-enum HomeRowType:String{
+enum HomeRowType:String {
     case carousel = "carousel"
     case products = "products"
-  
+    case deal = "deal"
  
     static func allType() -> [HomeRowType]
     {
-        let allItems:[HomeRowType] = [.carousel,.products]
+        let allItems:[HomeRowType] = [.carousel,.products,.deal]
         
         return allItems
     }

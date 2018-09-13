@@ -11,7 +11,8 @@ import UIKit
 class SecondParentCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    var logo = [UIImage(named: "book"), UIImage(named: "grocery"), UIImage(named: "health"), UIImage(named: "home2"), UIImage(named: "apperel")]
+    var text = ["Book", "Grocery", "Health", "Household", "Apperel"]
     var datasource : [URL]!{
         didSet{
             if datasource.count > 0{
@@ -21,16 +22,15 @@ class SecondParentCollectionViewCell: UICollectionViewCell, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datasource.count
+        return text.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SecondChildCollectionViewCell", for: indexPath) as! SecondChildCollectionViewCell
-        if indexPath.row < datasource.count{
-            cell.imageView.sd_setImage(with:datasource[indexPath.row], placeholderImage: UIImage())
-        }else{
-            cell.imageView.image = UIImage()
-        }
+        
+        let index = indexPath.row
+            cell.imageView.image = logo[index]
+            cell.name.text = text[index]
         
         return cell
     }
@@ -43,7 +43,7 @@ class SecondParentCollectionViewCell: UICollectionViewCell, UICollectionViewDele
 extension SecondParentCollectionViewCell :UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
-        return CGSize(width: (screenSize.width/4)-5, height: 100)
+        return CGSize(width: 80, height: 80)
     }
     
     
