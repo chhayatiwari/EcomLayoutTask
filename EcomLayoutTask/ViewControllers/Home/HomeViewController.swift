@@ -94,24 +94,25 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
                 return cell
             }
         }
+        else if indexPath.row == 2 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewCollectionViewCell", for: indexPath) 
+            return cell
+        }
             else{
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
-              //  if dealItem.count > 0 {
-                    let deal = self.dealItem[((indexPath as NSIndexPath).row)-2]
+                    let deal = self.dealItem[((indexPath as NSIndexPath).row)-3]
                         cell.productName.text = deal.name
                         cell.price.text = "₹ \(deal.price)"
                         if let imageURL = URL(string: (deal.image)) {
                         cell.imageView.sd_setImage(with: imageURL, placeholderImage: UIImage())
                     }
             
-            
-               // }
                 return cell
             }
         }
     
     func collectionView(_ collectionView: UICollectionView,numberOfItemsInSection section: Int) -> Int {
-        return rowType.count + dealItem.count 
+        return rowType.count + dealItem.count + 1
     }
 
     
@@ -125,6 +126,10 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
             case .products:
                 return CGSize(width: screenSize.width, height: 80)
             }
+        }
+        else if indexPath.row == 2 {
+            
+            return CGSize(width: screenSize.width, height: 50)
         }
         else{
             let screenWidth = screenSize.width
