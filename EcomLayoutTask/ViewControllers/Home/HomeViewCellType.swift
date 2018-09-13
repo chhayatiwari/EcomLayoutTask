@@ -11,11 +11,11 @@ enum HomeRowType:String{
     case carousel = "carousel"
     case products = "products"
     case deals = "deals"
-  //  case dealDetails = "deals_details"
+  
  
     static func allType() -> [HomeRowType]
     {
-        let allItems:[HomeRowType] = [.carousel,.products,.deals]//,.dealDetails]
+        let allItems:[HomeRowType] = [.carousel,.products,.deals]
         
         return allItems
     }

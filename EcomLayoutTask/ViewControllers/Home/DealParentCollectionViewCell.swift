@@ -7,10 +7,19 @@
 //
 
 import UIKit
+import SDWebImage
 
 class DealParentCollectionViewCell: UICollectionViewCell, UICollectionViewDelegate, UICollectionViewDataSource {
     
-    var dealArray:[Deal] = [Deal]()
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var dealArray : [Deal] = []{
+        didSet{
+            self.collectionView.reloadData()
+        }
+    }
+    
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dealArray.count
@@ -22,9 +31,10 @@ class DealParentCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
         let product = dealArray[index]
         
         if let imageURL = URL(string: product.image) {
+            cell.productName.text = product.name
+            cell.price.text = "₹ \(product.price)"
             cell.imageView.sd_setImage(with:imageURL, placeholderImage: UIImage())
         }
-        //
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -35,10 +45,16 @@ class DealParentCollectionViewCell: UICollectionViewCell, UICollectionViewDelega
 }
 
 extension DealParentCollectionViewCell : UICollectionViewDelegateFlowLayout{
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+   /* func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
         return CGSize(width: (screenSize.width/2)-5, height: 100)
+    } */
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        let cellGridSize: CGFloat = (screenWidth / 2.0) - 5
+       // let cellHeight: CGFloat = (cellGridSize*3)/2
+        return CGSize(width: cellGridSize, height: cellGridSize)
     }
-    
     
 }

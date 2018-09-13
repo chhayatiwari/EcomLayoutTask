@@ -13,12 +13,15 @@ struct Deal {
     
     let id: String
     let image: String
-    
+    let name:String
+    let price: Int
     // MARK: Initializers
     
     init(dictionary: [String:AnyObject]) {
         id = (dictionary["product_id"] as! String)
         image = (dictionary["product_image"] as! String)
+        name = dictionary["product_name"] as! String //
+        price = dictionary["final_price"] as! Int
     }
     
     static func dataForDeal(_ results: [[String:AnyObject]]) -> [Deal] {

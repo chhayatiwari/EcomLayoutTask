@@ -30,7 +30,7 @@ class SecondParentCollectionViewCell: UICollectionViewCell, UICollectionViewDele
 extension SecondParentCollectionViewCell :UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
-        return CGSize(width: screenSize.width, height: 200)
+        return CGSize(width: (screenSize.width/4)-5, height: 100)
     }
     
     

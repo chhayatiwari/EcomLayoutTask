@@ -13,15 +13,17 @@ import SDWebImage
 
 
 
-class HomeViewController: UIViewController, UICollectionViewDataSource {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
     var photoUrl:[URL] = [URL]()
     var dealItem:[Deal] = [Deal]()
     var offerItem:[Offer] = [Offer]()
     var rowType = HomeRowType.allType()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.register(DealChildCollectionViewCell.self, forCellWithReuseIdentifier: "DealChildCollectionViewCell")
         callAPI()
     }
 
@@ -50,19 +52,13 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
                                 }
                             }
                         }
-                        performUIUpdatesOnMain {
-                            self.collectionView.reloadData()
-                           
-                        }
+                        
                     }
                     guard let deal = result["DOD"] as? [[String:AnyObject]] else {
                         return
                     }
                     self.dealItem = Deal.dataForDeal(deal)
-                    performUIUpdatesOnMain {
-                        self.collectionView.reloadData()
-                        
-                    }
+                    
                     guard let offer = result["offer"] as? [[String:AnyObject]] else {
                         return
                     }
@@ -76,8 +72,16 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         }
     }
 
+    
+}
+
+//MARK: CollectionView Protocols
+
+extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        switch rowType[indexPath.row]{
+        
+        switch rowType[indexPath.row] {
         case .carousel :
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CarouselParentCollectionViewCell", for: indexPath) as! CarouselParentCollectionViewCell
             cell.datasource = photoUrl
@@ -87,15 +91,20 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
             
             //cell.datasource = photoUrl
             return cell
+            
         case .deals:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealParentCollectionViewCell", for: indexPath) as! DealParentCollectionViewCell
-            cell.dealArray = dealItem
-
+            
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealChildCollectionViewCell", for: indexPath) as! DealChildCollectionViewCell
+            if dealItem.count > 0 {
+                 let deal = self.dealItem[(indexPath.row)-2]
+                if let imageURL = URL(string: (deal.image)) {
+                    cell.imageView.sd_setImage(with:imageURL, placeholderImage: UIImage())
+                }
+                cell.productName.text = deal.name
+                cell.price.text = "₹ \(deal.price)"
+            }
+            
             return cell
-      /*  case .dealDetails:
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DealParentCollectionViewCell", for: indexPath) as! DealParentCollectionViewCell
-            cell.dealArray = dealItem
-            return cell */
         }
     }
     
@@ -103,13 +112,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource {
         return rowType.count
     }
 
-}
-
-//MARK: CollectionView Protocols
-
-extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
-    
-    
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
@@ -119,10 +121,12 @@ extension HomeViewController: UICollectionViewDelegate,UICollectionViewDelegateF
         case .products:
             return CGSize(width: screenSize.width, height: 100)
         case .deals:
-            return CGSize(width: screenSize.width, height: 300)
-        /*case .dealDetails:
-            return CGSize(width: screenSize.width, height: 500)
-*/
+            let screenWidth = screenSize.width
+            let cellGridSize: CGFloat = (screenWidth / 2.0) - 5
+            // let cellHeight: CGFloat = (cellGridSize*3)/2
+            return CGSize(width: cellGridSize, height: cellGridSize)
+           // return CGSize(width: screenSize.width, height: 300)
+       
         }
     }
     
