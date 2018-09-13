@@ -23,14 +23,14 @@ enum APIRouter:URLRequestConvertible {
         }
     }
     
-    static let baseUrlString = "https://mrnmrsekart.com/api/Dashboard"
+    static let baseUrlString = "https://mrnmrsekart.com/api"
     
     var path:String{
         switch self{
         case .firstApi:
-            return ""
+            return "/Dashboard"
         case .secondApi:
-            return ""
+            return "/GetCategory"
         }
     }
 
