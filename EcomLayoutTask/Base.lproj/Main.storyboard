@@ -15,7 +15,7 @@
         <scene sceneID="R5I-lb-nAh">
             <objects>
                 <navigationController id="L2R-M7-Ugy" userLabel="Item 1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="cCu-cS-thg"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="icon_mapview-deselected copy" id="cCu-cS-thg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="qVB-ok-I3U">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -142,7 +142,7 @@
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgL-HU-UXc">
                                                                         <rect key="frame" x="8" y="60" width="67" height="14"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
@@ -326,7 +326,7 @@
         <scene sceneID="lVc-WT-xeu">
             <objects>
                 <navigationController id="blR-Mh-qWw" userLabel="Item 2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Category" id="NhC-sC-zZU"/>
+                    <tabBarItem key="tabBarItem" title="Category" image="icon_listview-deselected copy" id="NhC-sC-zZU"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Hsr-Vu-5Jz">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -448,4 +448,8 @@
             <point key="canvasLocation" x="271" y="-40"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_listview-deselected copy" width="75" height="50"/>
+        <image name="icon_mapview-deselected copy" width="75" height="50"/>
+    </resources>
 </document>
