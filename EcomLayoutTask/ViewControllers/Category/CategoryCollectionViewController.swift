@@ -23,11 +23,14 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         getCategoryData()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
+        
         let space:CGFloat = 2.0
         let dimension = (view.frame.size.width - (3 * space)) / 3.0
         let height1 = (dimension * 4) / 3.0
@@ -35,7 +38,6 @@ class CategoryCollectionViewController: UICollectionViewController {
         flowLayout.minimumLineSpacing = space
         flowLayout.itemSize = CGSize(width: dimension, height: height1)
     }
-
     func isInternetAvailable() -> Bool
     {
         var zeroAddress = sockaddr_in()
@@ -71,7 +73,7 @@ class CategoryCollectionViewController: UICollectionViewController {
             return
         }
         let parameters = ["result":["timestamp":""]] as [String:AnyObject]
-        Alamofire.request(APIRouter.secondApi(params: parameters )).responseJSON { (responseData) -> Void in
+        Alamofire.request(APIRouter.getCategoryApi(params: parameters )).responseJSON { (responseData) -> Void in
             if let response = (responseData.result.value)  {
                 
                 if let swiftyJsonVar = JSON(response).dictionaryObject {

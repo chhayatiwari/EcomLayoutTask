@@ -11,14 +11,14 @@ import Alamofire
 
 enum APIRouter:URLRequestConvertible {
     
-    case firstApi(params:Parameters)
-    case secondApi(params:Parameters)
+    case dashboardApi(params:Parameters)
+    case getCategoryApi(params:Parameters)
     
     var method:HTTPMethod {
         switch self {
-        case .firstApi:
+        case .dashboardApi:
             return .get
-        case .secondApi:
+        case .getCategoryApi:
             return .post
         }
     }
@@ -27,9 +27,9 @@ enum APIRouter:URLRequestConvertible {
     
     var path:String{
         switch self{
-        case .firstApi:
+        case .dashboardApi:
             return "/Dashboard"
-        case .secondApi:
+        case .getCategoryApi:
             return "/GetCategory"
         }
     }
@@ -41,9 +41,9 @@ enum APIRouter:URLRequestConvertible {
         urlRequest.httpMethod = method.rawValue
         urlRequest.setValue("application/json", forHTTPHeaderField: "content-type")
         switch self {
-        case .firstApi(let parameters):
+        case .dashboardApi(let parameters):
             urlRequest = try URLEncoding.default.encode(urlRequest, with: parameters)
-        case .secondApi(let parameters):
+        case .getCategoryApi(let parameters):
             urlRequest = try JSONEncoding.default.encode(urlRequest, with: parameters)
         }
         return urlRequest

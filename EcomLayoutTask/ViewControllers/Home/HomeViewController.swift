@@ -26,11 +26,13 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
         getDashboardData()
     }
-
     func isInternetAvailable() -> Bool
     {
         var zeroAddress = sockaddr_in()
@@ -66,7 +68,7 @@ class HomeViewController: UIViewController {
             return
         }
         let Parameters = ["":""]
-        Alamofire.request(APIRouter.firstApi(params: Parameters )).responseJSON { (responseData) -> Void in
+        Alamofire.request(APIRouter.dashboardApi(params: Parameters )).responseJSON { (responseData) -> Void in
             if let response = (responseData.result.value)  {
                 
                 if let swiftyJsonVar = JSON(response).dictionaryObject {
