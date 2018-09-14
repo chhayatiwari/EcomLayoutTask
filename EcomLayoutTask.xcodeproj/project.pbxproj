@@ -71,23 +71,29 @@
 		182FEF01214A7C11003100D1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				182FEF04214A83A4003100D1 /* CategoryCollectionViewCell.swift */,
 				182FEF08214AD60E003100D1 /* SubCategoryTableViewController.swift */,
 				182FEF02214A7C4F003100D1 /* CategoryCollectionViewController.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
 		};
-		1843508C21490FF20039D1F6 /* Home */ = {
+		182FEF0A214BD343003100D1 /* CollectionViewCells */ = {
 			isa = PBXGroup;
 			children = (
-				12703BA72148EB86007D0121 /* HomeViewController.swift */,
-				12703BA52148E80A007D0121 /* HomeViewCellType.swift */,
+				182FEF04214A83A4003100D1 /* CategoryCollectionViewCell.swift */,
 				12703BA92148F9D2007D0121 /* CarouselParentCollectionViewCell.swift */,
 				18435081214842F40039D1F6 /* CarouselChildCollectionViewCell.swift */,
 				1843508821490B120039D1F6 /* SecondParentCollectionViewCell.swift */,
 				1843508D2149175A0039D1F6 /* SecondChildCollectionViewCell.swift */,
 				1843508F214918690039D1F6 /* DealChildCollectionViewCell.swift */,
+			);
+			path = CollectionViewCells;
+			sourceTree = "<group>";
+		};
+		1843508C21490FF20039D1F6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				12703BA72148EB86007D0121 /* HomeViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -113,10 +119,11 @@
 		1869C0C6214685AA0054C9D0 /* EcomLayoutTask */ = {
 			isa = PBXGroup;
 			children = (
-				1869C0ED2146F05E0054C9D0 /* Models */,
 				1869C0C7214685AA0054C9D0 /* AppDelegate.swift */,
-				1869C0DC214694DC0054C9D0 /* Networking */,
 				1869C0D9214693870054C9D0 /* ViewControllers */,
+				182FEF0A214BD343003100D1 /* CollectionViewCells */,
+				1869C0ED2146F05E0054C9D0 /* Models */,
+				1869C0DC214694DC0054C9D0 /* Networking */,
 				1869C0CB214685AA0054C9D0 /* Main.storyboard */,
 				1869C0CE214685AF0054C9D0 /* Assets.xcassets */,
 				1869C0D0214685AF0054C9D0 /* LaunchScreen.storyboard */,
@@ -149,6 +156,7 @@
 				1843507D214829A70039D1F6 /* Deal.swift */,
 				1843507F214829B80039D1F6 /* Offer.swift */,
 				182FEF06214AC705003100D1 /* Category.swift */,
+				12703BA52148E80A007D0121 /* HomeViewCellType.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
