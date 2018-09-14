@@ -72,6 +72,6 @@ extension CarouselParentCollectionViewCell : UICollectionViewDelegate, UICollect
     
     func startTimer() {
         
-        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: Selector("autoScroll"), userInfo: nil, repeats: true)
+        _ = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(self.autoScroll), userInfo: nil, repeats: true)
     }
 }
