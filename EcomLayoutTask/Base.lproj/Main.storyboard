@@ -141,10 +141,7 @@
                                                                         </userDefinedRuntimeAttributes>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgL-HU-UXc">
-                                                                        <rect key="frame" x="8" y="60" width="67" height="20"/>
-                                                                        <constraints>
-                                                                            <constraint firstAttribute="height" constant="20" id="1bO-bb-Ky4"/>
-                                                                        </constraints>
+                                                                        <rect key="frame" x="8" y="60" width="67" height="14"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -332,7 +329,7 @@
             </objects>
             <point key="canvasLocation" x="-1315" y="-35"/>
         </scene>
-        <!--Category Collection View Controller-->
+        <!--Sub Category-->
         <scene sceneID="aV8-Ri-nvW">
             <objects>
                 <collectionViewController id="UAU-qc-iWr" customClass="CategoryCollectionViewController" customModule="EcomLayoutTask" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,7 +338,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="1KN-nk-cWD">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="120" height="140"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -354,15 +351,15 @@
                                     <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-Iu-YgI">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="120"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="120" id="YPY-3H-KvZ"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dI5-Iu-YgI">
+                                            <rect key="frame" x="0.0" y="0.0" width="150" height="111"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIi-DK-Tf2">
-                                            <rect key="frame" x="8" y="121" width="134" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zIi-DK-Tf2">
+                                            <rect key="frame" x="8" y="112" width="134" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="vRB-Vx-Vty"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -381,7 +378,6 @@
                                 <connections>
                                     <outlet property="imageView" destination="dI5-Iu-YgI" id="KEz-Lb-tMF"/>
                                     <outlet property="name" destination="zIi-DK-Tf2" id="2T9-9r-czE"/>
-                                    <segue destination="lWx-PE-JFf" kind="show" identifier="subCategory" id="rA7-SM-Y8O"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -390,7 +386,10 @@
                             <outlet property="delegate" destination="UAU-qc-iWr" id="j9O-QQ-sF3"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="xxg-pX-zib"/>
+                    <navigationItem key="navigationItem" title="Sub Category" id="xxg-pX-zib"/>
+                    <connections>
+                        <outlet property="flowLayout" destination="1KN-nk-cWD" id="h0x-wF-jJg"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H2v-LL-zpP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -399,13 +398,13 @@
         <!--Sub Category Table View Controller-->
         <scene sceneID="GOK-Jw-tP5">
             <objects>
-                <tableViewController storyboardIdentifier="SubCategoryTableViewController" id="lWx-PE-JFf" customClass="SubCategoryTableViewController" customModule="EcomLayoutTask" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MDi-W0-TkS">
+                <tableViewController storyboardIdentifier="SubCategoryTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="lWx-PE-JFf" customClass="SubCategoryTableViewController" customModule="EcomLayoutTask" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MDi-W0-TkS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="Fda-Sf-6OW" style="IBUITableViewCellStyleDefault" id="N0Y-gT-7CU">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="Fda-Sf-6OW" style="IBUITableViewCellStyleDefault" id="N0Y-gT-7CU">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="N0Y-gT-7CU" id="Qc0-BP-3Po">

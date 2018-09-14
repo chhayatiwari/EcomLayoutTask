@@ -18,7 +18,7 @@ class CarouselParentCollectionViewCell: UICollectionViewCell {
     }
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        startTimer()
     }
     
 }
@@ -49,6 +49,29 @@ extension CarouselParentCollectionViewCell : UICollectionViewDelegate, UICollect
         return CGSize(width: screenSize.width, height: 200)
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    @objc func autoScroll() {
+        if let coll  = collectionView {
+            for cell in coll.visibleCells {
+                let indexPath: IndexPath? = coll.indexPath(for: cell)
+                if ((indexPath?.row)!  <  datasource.count )
+                {
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)
+                    
+                    coll.scrollToItem(at: indexPath1!, at: .right, animated: true)
+                }
+                else{
+                    let indexPath1: IndexPath?
+                    indexPath1 = IndexPath.init(row: 0, section: (indexPath?.section)!)
+                    coll.scrollToItem(at: indexPath1!, at: .left, animated: true)
+                }
+                
+            }
+        }
+    }
+    
+    func startTimer() {
+        
+        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: Selector("autoScroll"), userInfo: nil, repeats: true)
     }
 }

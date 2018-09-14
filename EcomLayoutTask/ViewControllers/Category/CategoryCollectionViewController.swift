@@ -13,6 +13,7 @@ import SwiftyJSON
 private let reuseIdentifier = "Cell"
 
 class CategoryCollectionViewController: UICollectionViewController {
+    @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
     
     let tableSegue = "SubCategoryTableViewController"
     var categoryArray:[Category] = [Category]()
@@ -23,7 +24,12 @@ class CategoryCollectionViewController: UICollectionViewController {
         callAPI()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
-        // Do any additional setup after loading the view.
+        let space:CGFloat = 2.0
+        let dimension = (view.frame.size.width - (3 * space)) / 3.0
+        let height1 = (dimension * 4) / 3.0
+        flowLayout.minimumInteritemSpacing = space
+        flowLayout.minimumLineSpacing = space
+        flowLayout.itemSize = CGSize(width: dimension, height: height1)
     }
 
     func callAPI()
@@ -74,41 +80,24 @@ class CategoryCollectionViewController: UICollectionViewController {
         cell.name.text = singleCategory.name
         return cell
     }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let detailController = self.storyboard!.instantiateViewController(withIdentifier: "SubCategoryTableViewController") as! SubCategoryTableViewController
+        
+        let detailController = self.storyboard!.instantiateViewController(withIdentifier: tableSegue) as! SubCategoryTableViewController
         detailController.subCat = self.categoryArray[indexPath.row]
         self.navigationController!.pushViewController(detailController, animated: true)
     }
-  /*  // MARK: Segue for going on DetailViewController
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == tableSegue {
-            guard let indexPath = collectionView?.indexPath(for: sender as! CategoryCollectionViewCell) else { return }
-            
-            if let detailController = segue.destination as? SubCategoryTableViewController {
-                let backItem = UIBarButtonItem()
-                backItem.title = "Sub Category List"
-                navigationItem.backBarButtonItem = backItem
-                detailController.subCat = self.categoryArray[indexPath.row]
-                
-                
-            }
-        }
-    } */
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+  /*
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let screenSize: CGRect = UIScreen.main.bounds
         
             let screenWidth = screenSize.width
-            let cellGridSize: CGFloat = (screenWidth / 2.0) - 5
+            let cellGridSize: CGFloat = (screenWidth/2.0) - 5
             // let cellHeight: CGFloat = (cellGridSize*3)/2
             return CGSize(width: cellGridSize, height: cellGridSize)
         
     }
-    // MARK: UICollectionViewDelegate
-
-   /*
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
     */
 
 }
+
