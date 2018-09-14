@@ -14,6 +14,7 @@ private let reuseIdentifier = "Cell"
 
 class CategoryCollectionViewController: UICollectionViewController {
     @IBOutlet weak var flowLayout: UICollectionViewFlowLayout!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let tableSegue = "SubCategoryTableViewController"
     var categoryArray:[Category] = [Category]()
@@ -21,7 +22,9 @@ class CategoryCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        callAPI()
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
+        getCategoryData()
         self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         let space:CGFloat = 2.0
@@ -32,7 +35,7 @@ class CategoryCollectionViewController: UICollectionViewController {
         flowLayout.itemSize = CGSize(width: dimension, height: height1)
     }
 
-    func callAPI()
+    func getCategoryData()
     {
        
         let parameters = ["result":["timestamp":""]] as [String:AnyObject]
@@ -48,6 +51,8 @@ class CategoryCollectionViewController: UICollectionViewController {
                     }
                     self.categoryArray = Category.dataForCategory(category)
                     performUIUpdatesOnMain {
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
                         self.collectionView?.reloadData()
                         
                     }

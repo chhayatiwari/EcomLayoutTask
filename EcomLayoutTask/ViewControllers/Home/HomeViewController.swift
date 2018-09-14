@@ -28,10 +28,10 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         activityIndicator.startAnimating()
         activityIndicator.isHidden = false
-        callAPI()
+        getDashboardData()
     }
 
-    func callAPI()
+    func getDashboardData()
     {
         let Parameters = ["":""]
         Alamofire.request(APIRouter.firstApi(params: Parameters )).responseJSON { (responseData) -> Void in
