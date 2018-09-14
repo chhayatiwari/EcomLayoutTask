@@ -217,12 +217,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Home/HomeViewController.swift"
-            timestampString = "558613940.269938"
+            timestampString = "558614386.307937"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "callAPI()"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getDashboardData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -233,12 +233,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Home/HomeViewController.swift"
-            timestampString = "558613940.270118"
+            timestampString = "558614386.308422"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
-            landmarkName = "callAPI()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "getDashboardData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -249,12 +249,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Home/HomeViewController.swift"
-            timestampString = "558613940.27025"
+            timestampString = "558614386.308717"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
-            landmarkName = "callAPI()"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
+            landmarkName = "getDashboardData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -265,11 +265,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Home/HomeViewController.swift"
-            timestampString = "558613940.270363"
+            timestampString = "558614386.309028"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,12 +281,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Home/HomeViewController.swift"
-            timestampString = "558613940.270472"
+            timestampString = "558614386.3093719"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "callAPI()"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "getDashboardData()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -329,12 +329,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.270587"
+            timestampString = "558614386.30968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -345,12 +345,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.2713929"
+            timestampString = "558614386.309821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -377,12 +377,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.271878"
+            timestampString = "558614386.309953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -425,12 +425,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.2723449"
+            timestampString = "558614386.3100621"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -505,12 +505,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.272866"
+            timestampString = "558614386.310245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -521,12 +521,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.273261"
+            timestampString = "558614386.3103451"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "getCategoryData()"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "isInternetAvailable()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -553,13 +553,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.2736501"
+            timestampString = "558614386.310482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "124"
+            endingLineNumber = "124"
+            landmarkName = "CategoryCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -569,7 +569,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/SubCategoryTableViewController.swift"
-            timestampString = "558613940.2740901"
+            timestampString = "558614386.310626"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -585,7 +585,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/SubCategoryTableViewController.swift"
-            timestampString = "558613940.274273"
+            timestampString = "558614386.310707"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -601,7 +601,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/SubCategoryTableViewController.swift"
-            timestampString = "558613940.274367"
+            timestampString = "558614386.310792"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -617,13 +617,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "EcomLayoutTask/ViewControllers/Category/CategoryCollectionViewController.swift"
-            timestampString = "558613940.274469"
+            timestampString = "558614386.310908"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "collectionView(_:didSelectItemAt:)"
-            landmarkType = "7">
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "CategoryCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
