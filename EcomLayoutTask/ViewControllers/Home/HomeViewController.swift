@@ -15,8 +15,9 @@ import SDWebImage
 
 class HomeViewController: UIViewController {
     
-    
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     var photoUrl:[URL] = [URL]()
     var dealItem:[Deal] = [Deal]()
     var offerItem:[Offer] = [Offer]()
@@ -25,6 +26,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
 
         super.viewDidLoad()
+        activityIndicator.startAnimating()
+        activityIndicator.isHidden = false
         callAPI()
     }
 
@@ -66,6 +69,8 @@ class HomeViewController: UIViewController {
                     }
                     self.offerItem = Offer.dataForOffer(offer)
                     performUIUpdatesOnMain {
+                        self.activityIndicator.stopAnimating()
+                        self.activityIndicator.isHidden = true
                         self.collectionView.reloadData()
                         
                     }

@@ -53,7 +53,7 @@ extension CarouselParentCollectionViewCell : UICollectionViewDelegate, UICollect
         if let coll  = collectionView {
             for cell in coll.visibleCells {
                 let indexPath: IndexPath? = coll.indexPath(for: cell)
-                if ((indexPath?.row)!  <  datasource.count )
+                if ((indexPath?.row)! < datasource.count - 1)
                 {
                     let indexPath1: IndexPath?
                     indexPath1 = IndexPath.init(row: (indexPath?.row)! + 1, section: (indexPath?.section)!)

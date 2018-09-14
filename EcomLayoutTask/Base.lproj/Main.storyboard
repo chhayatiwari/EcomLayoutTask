@@ -275,18 +275,28 @@
                                     <outlet property="delegate" destination="wNg-z3-b1N" id="I8z-Zf-Pj0"/>
                                 </connections>
                             </collectionView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Db0-2q-DY5">
+                                <rect key="frame" x="167" y="313" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Rj2-iX-nBA"/>
+                                    <constraint firstAttribute="width" constant="40" id="tnD-0L-Y6G"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="B5F-wF-Ee0" firstAttribute="top" secondItem="XP1-ZF-qgW" secondAttribute="top" id="NIY-8H-ZWC"/>
                             <constraint firstItem="B5F-wF-Ee0" firstAttribute="trailing" secondItem="XP1-ZF-qgW" secondAttribute="trailing" id="Reb-Tv-4GU"/>
+                            <constraint firstItem="Db0-2q-DY5" firstAttribute="centerY" secondItem="yxh-bf-KNh" secondAttribute="centerY" id="bYh-vt-N8L"/>
                             <constraint firstItem="B5F-wF-Ee0" firstAttribute="leading" secondItem="XP1-ZF-qgW" secondAttribute="leading" id="tJ6-Bk-y57"/>
                             <constraint firstItem="B5F-wF-Ee0" firstAttribute="bottom" secondItem="XP1-ZF-qgW" secondAttribute="bottom" id="yYi-kL-ZGo"/>
+                            <constraint firstItem="Db0-2q-DY5" firstAttribute="centerX" secondItem="yxh-bf-KNh" secondAttribute="centerX" id="zmh-oy-7BH"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XP1-ZF-qgW"/>
                     </view>
                     <navigationItem key="navigationItem" id="3XN-pk-Ixt"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="Db0-2q-DY5" id="wLs-0S-Vci"/>
                         <outlet property="collectionView" destination="B5F-wF-Ee0" id="0Jq-MK-gEq"/>
                     </connections>
                 </viewController>
