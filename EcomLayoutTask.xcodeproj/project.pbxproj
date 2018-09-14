@@ -11,7 +11,9 @@
 		12703BA82148EB86007D0121 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12703BA72148EB86007D0121 /* HomeViewController.swift */; };
 		12703BAA2148F9D2007D0121 /* CarouselParentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12703BA92148F9D2007D0121 /* CarouselParentCollectionViewCell.swift */; };
 		182FEF03214A7C4F003100D1 /* CategoryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF02214A7C4F003100D1 /* CategoryCollectionViewController.swift */; };
-		182FEF05214A83A4003100D1 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF04214A83A4003100D1 /* CollectionViewCell.swift */; };
+		182FEF05214A83A4003100D1 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF04214A83A4003100D1 /* CategoryCollectionViewCell.swift */; };
+		182FEF07214AC705003100D1 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF06214AC705003100D1 /* Category.swift */; };
+		182FEF09214AD60E003100D1 /* SubCategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182FEF08214AD60E003100D1 /* SubCategoryTableViewController.swift */; };
 		1843507E214829A70039D1F6 /* Deal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843507D214829A70039D1F6 /* Deal.swift */; };
 		18435080214829B80039D1F6 /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1843507F214829B80039D1F6 /* Offer.swift */; };
 		18435082214842F40039D1F6 /* CarouselChildCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18435081214842F40039D1F6 /* CarouselChildCollectionViewCell.swift */; };
@@ -33,7 +35,9 @@
 		12703BA92148F9D2007D0121 /* CarouselParentCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselParentCollectionViewCell.swift; sourceTree = "<group>"; };
 		171031DE1087604BCA3CE41B /* Pods_EcomLayoutTask.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EcomLayoutTask.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		182FEF02214A7C4F003100D1 /* CategoryCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewController.swift; sourceTree = "<group>"; };
-		182FEF04214A83A4003100D1 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		182FEF04214A83A4003100D1 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		182FEF06214AC705003100D1 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		182FEF08214AD60E003100D1 /* SubCategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubCategoryTableViewController.swift; sourceTree = "<group>"; };
 		1843507D214829A70039D1F6 /* Deal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deal.swift; sourceTree = "<group>"; };
 		1843507F214829B80039D1F6 /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
 		18435081214842F40039D1F6 /* CarouselChildCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarouselChildCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -67,7 +71,8 @@
 		182FEF01214A7C11003100D1 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				182FEF04214A83A4003100D1 /* CollectionViewCell.swift */,
+				182FEF04214A83A4003100D1 /* CategoryCollectionViewCell.swift */,
+				182FEF08214AD60E003100D1 /* SubCategoryTableViewController.swift */,
 				182FEF02214A7C4F003100D1 /* CategoryCollectionViewController.swift */,
 			);
 			path = Category;
@@ -143,6 +148,7 @@
 			children = (
 				1843507D214829A70039D1F6 /* Deal.swift */,
 				1843507F214829B80039D1F6 /* Offer.swift */,
+				182FEF06214AC705003100D1 /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -281,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18435080214829B80039D1F6 /* Offer.swift in Sources */,
+				182FEF07214AC705003100D1 /* Category.swift in Sources */,
 				1843508E2149175A0039D1F6 /* SecondChildCollectionViewCell.swift in Sources */,
 				12703BAA2148F9D2007D0121 /* CarouselParentCollectionViewCell.swift in Sources */,
 				1869C0EF2146F3EF0054C9D0 /* GCDBlackBox.swift in Sources */,
@@ -290,9 +297,10 @@
 				1869C0C8214685AA0054C9D0 /* AppDelegate.swift in Sources */,
 				1843508921490B120039D1F6 /* SecondParentCollectionViewCell.swift in Sources */,
 				12703BA62148E80A007D0121 /* HomeViewCellType.swift in Sources */,
-				182FEF05214A83A4003100D1 /* CollectionViewCell.swift in Sources */,
+				182FEF05214A83A4003100D1 /* CategoryCollectionViewCell.swift in Sources */,
 				1843507E214829A70039D1F6 /* Deal.swift in Sources */,
 				18435082214842F40039D1F6 /* CarouselChildCollectionViewCell.swift in Sources */,
+				182FEF09214AD60E003100D1 /* SubCategoryTableViewController.swift in Sources */,
 				18435090214918690039D1F6 /* DealChildCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
